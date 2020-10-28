@@ -1,19 +1,9 @@
 import numpy as np
 import pandas as pd
-import tensorflow as tf
 import tensorflow_hub as hub
-import tensorflow_datasets as tfds
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import Lasso
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.pipeline import Pipeline
-from sklearn.compose import ColumnTransformer
-from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import StandardScaler
-from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder
 import tensorflow as tf
-from tensorflow.keras import layers
-from tensorflow.keras.layers.experimental import preprocessing
+
 
 
 np.set_printoptions(precision=3, suppress=True)
