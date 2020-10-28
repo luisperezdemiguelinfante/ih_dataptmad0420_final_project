@@ -43,6 +43,19 @@ def to_be_eficiencias(template):
             '/Users/luisdemiguel/Desktop/Ironhack/ih_dataptmad0420_final_project/data/processed/eficiencias_totales.xlsx') as writer:
         eficiencias_totales_summary.to_excel(writer, sheet_name='eficiencias_totales')
 
+    sizing_template = pd.merge(dedicacion_clean, eficiencias_totales_summary, how='inner', on='level1')
+    sizing_template['csc fte'] = (sizing_template['reported fte'] * (
+                100 - sizing_template['eficiencias totales'])) / 100
+    sizing_template = sizing_template[
+        ['site', 'employee', 'task description', 'reported fte', 'eficiencias totales', 'csc fte', 'level1', 'level2',
+         'level3', 'operative']]
+
+    operative_csc = sizing_template['operative'] == 'CSC'
+    sizing_template_csc = sizing_template[operative_csc]
+
+    with pd.ExcelWriter(
+            '/Users/luisdemiguel/Desktop/Ironhack/ih_dataptmad0420_final_project/data/processed/csc_sizing_template.xlsx') as writer:
+        sizing_template_csc.to_excel(writer, sheet_name='csc_sizing')
 
 
-    return eficiencias_totales_summary
+    return eficiencias_totales_summary, sizing_template_csc
