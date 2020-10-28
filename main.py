@@ -2,7 +2,7 @@ import argparse
 from modules import m_acquisition
 from modules.as_is_excel import m_alcance_analisis, m_vision_global, m_procesos, m_distribucion_process_site
 from modules.as_is_charts import m_vision_global_fig, m_fig_excel
-from modules.to_be import to_be_template
+from modules.to_be import to_be_template, field_prediction
 import pandas as pd
 
 
@@ -32,6 +32,7 @@ def main(empresa):
     excel_charts= m_fig_excel.excel_chart(template)
     #key_words_template=key_words.key_words_column(template)
     eficiencias_totales=to_be_template.to_be_eficiencias(template)
+    field_predictions=field_prediction.field_labels(template)
 
     #df_dict_vision_global = m_vision_global.empleado_dedicacion(template)
     #df_alcance_analisis = m_alcance_analisis.alcance_analisis(template)
@@ -47,7 +48,7 @@ def main(empresa):
 
     #to_excel(df_dict_global, 'as_is_excel_test.xlsx')
 
-    return template, vision_global, alcance,procesos_site, tareas_process, vision_global_fig, excel_charts, eficiencias_totales
+    return template, vision_global, alcance,procesos_site, tareas_process, vision_global_fig, excel_charts, eficiencias_totales, field_predictions
 
 
 
