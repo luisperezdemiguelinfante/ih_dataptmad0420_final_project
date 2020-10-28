@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">argparse</span>
+<span class="s0">from </span><span class="s1">modules </span><span class="s0">import </span><span class="s1">m_acquisition</span>
+<span class="s0">from </span><span class="s1">modules.as_is_excel </span><span class="s0">import </span><span class="s1">m_alcance_analisis</span><span class="s0">, </span><span class="s1">m_vision_global</span><span class="s0">, </span><span class="s1">m_procesos</span><span class="s0">, </span><span class="s1">m_gather_as_is</span>
+<span class="s0">import </span><span class="s1">pandas </span><span class="s0">as </span><span class="s1">pd</span>
+
+
+<span class="s0">def </span><span class="s1">argument_parser():</span>
+    <span class="s1">parser = argparse.ArgumentParser(description=</span><span class="s2">'sepcify company..'</span><span class="s1">)</span>
+    <span class="s1">parser.add_argument(</span><span class="s2">&quot;-e&quot;</span><span class="s0">, </span><span class="s2">&quot;--empresa&quot;</span><span class="s0">, </span><span class="s1">type = str</span><span class="s0">, </span><span class="s1">help=</span><span class="s2">'specify the company...'</span><span class="s0">, </span><span class="s1">required=</span><span class="s0">True</span><span class="s1">)</span>
+    <span class="s3">#parser.add_argument(&quot;-p&quot;, &quot;--pestana&quot;, type=str, help='pestana...', required=True)</span>
+    <span class="s1">args = parser.parse_args()</span>
+
+    <span class="s0">return </span><span class="s1">args</span>
+
+
+<span class="s0">def </span><span class="s1">main(empresa):</span><span class="s3">#, dedicacion=None):</span>
+    <span class="s1">print(</span><span class="s2">'starting pipeline...'</span><span class="s1">)</span>
+    <span class="s3">#m_acquisition.plantilla(args.empresa)#,pestana)</span>
+    <span class="s1">template = m_acquisition.plantilla(empresa)</span>
+    <span class="s1">alcance= m_alcance_analisis.alcance_analisis(template)</span>
+    <span class="s1">procesos_site = m_procesos.process_site_split(template)</span>
+    <span class="s1">vision_global = m_vision_global.empleado_dedicacion(template)</span>
+
+    <span class="s3">#to_excel = m_gather_as_is.to_excel(dict, str)</span>
+
+    <span class="s3">#def to_excel(df_dict: dict, excel_name: str) -&gt; None:</span>
+        <span class="s3">#with pd.ExcelWriter(excel_name) as writer:</span>
+            <span class="s3">#for df, sheet in df_dict.items():</span>
+                <span class="s3">#df.to_excel(writer, sheet_name=sheet)</span>
+
+    <span class="s3">#df_dict_vision_global = m_vision_global.empleado_dedicacion(template)</span>
+    <span class="s3">#df_alcance_analisis = m_alcance_analisis.alcance_analisis(template)</span>
+    <span class="s3">#df_dict_global = dict(**df_dict_vision_global)#, **df_alcance_analisis)</span>
+
+    <span class="s3">#to_excel(df_dict_global, 'as_is_excel.xlsx')</span>
+
+
+
+    <span class="s0">return </span><span class="s1">template</span><span class="s0">, </span><span class="s1">vision_global</span><span class="s0">, </span><span class="s1">alcance</span><span class="s0">,</span><span class="s1">procesos_site</span>
+
+
+
+<span class="s0">if </span><span class="s1">__name__ == </span><span class="s2">'__main__'</span><span class="s1">:</span>
+    <span class="s1">arguments = argument_parser()</span>
+    <span class="s1">main(arguments)</span>
+
+</pre>
+</body>
+</html>
