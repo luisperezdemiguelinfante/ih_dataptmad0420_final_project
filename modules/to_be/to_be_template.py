@@ -39,7 +39,10 @@ def to_be_eficiencias(template):
     eficiencias_total['eficiencias totales'] = eficiencias_total.apply(f, axis=1).round(2)
     eficiencias_totales_summary = eficiencias_total.groupby('level1')['eficiencias totales'].sum().to_frame()
 
-    eficiencias_totales_summary.to_csv(
-        '/Users/luisdemiguel/Desktop/Ironhack/ih_dataptmad0420_final_project/data/processed/eficiencias_totales.xlsx')
+    with pd.ExcelWriter(
+            '/Users/luisdemiguel/Desktop/Ironhack/ih_dataptmad0420_final_project/data/processed/eficiencias_totales.xlsx') as writer:
+        eficiencias_totales_summary.to_excel(writer, sheet_name='eficiencias_totales')
+
+
 
     return eficiencias_totales_summary

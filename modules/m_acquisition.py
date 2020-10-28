@@ -9,8 +9,10 @@ def plantilla(empresa):  # pestana='dedicaciones'):
         ['site', 'employee', 'position', 'task description', 'reported fte', 'total', 'field', 'level1', 'level2',
          'level3', 'operative']].dropna()
 
-    dedicacion_clean.to_csv(
-        '/Users/luisdemiguel/Desktop/Ironhack/ih_dataptmad0420_final_project/data/processed/template.xlsx')
+    with pd.ExcelWriter(
+            '/Users/luisdemiguel/Desktop/Ironhack/ih_dataptmad0420_final_project/data/processed/template.xlsx') as writer:
+        dedicacion_clean.to_excel(writer, sheet_name='template')
+
 
     return dedicacion_clean
 

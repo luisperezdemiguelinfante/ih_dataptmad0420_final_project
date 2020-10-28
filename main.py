@@ -7,33 +7,23 @@ from modules.to_be import to_be_template
 import pandas as pd
 
 
-#how to do the dictionary to include all sheets in the same excel
-#how to print the images in diferent sheets
-# how to choose the folder to be exported to
-# i dont know how to include the labels in the stacked chart
-
-
-
-
 def to_excel(df_dict: dict, excel_name: str) -> None:
     with pd.ExcelWriter(excel_name) as writer:
         for df, sheet in df_dict.items():
             df.to_excel(writer, sheet_name=sheet)
 
 
-
 def argument_parser():
     parser = argparse.ArgumentParser(description='sepcify company..')
     #parser.add_argument("-e", "--empresa", type = str, help='specify the company...', required=True)
-    #parser.add_argument("-p", "--pestana", type=str, help='pestana...', required=True)
     args = parser.parse_args()
 
     return args
 
 
-def main(empresa):#, dedicacion=None):
+def main(empresa):
     print('starting pipeline...')
-    #m_acquisition.plantilla(args.empresa)#,pestana)
+
     template = m_acquisition.plantilla(empresa)
     alcance= m_alcance_analisis.alcance_analisis(template)
     procesos_site = m_procesos.process_site_split(template)
