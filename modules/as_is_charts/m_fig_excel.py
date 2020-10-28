@@ -6,7 +6,7 @@ import os
 import glob
 import re
 
-def test(template):
+def excel_chart(template):
     #workbook = xlsxwriter.Workbook('image.xlsx')
     #worksheet = workbook.add_worksheet()
 
@@ -27,12 +27,6 @@ def test(template):
         if file.endswith('.png'):
             lista.append(file)
 
-    #with xlsxwriter.Workbook('test9.xlsx') as workbook:
-        #for sheet in lista:
-            #worksheet = workbook.add_worksheet(sheet)
-            #worksheet.write('A1', 'Hello')
-            #worksheet.insert_image('C3', 'plantas_process_finanzas.png')
-
 
 
     #this is to include them all in the same sheet, i dont know how to separate them
@@ -46,8 +40,8 @@ def test(template):
         #print(lista[i])
         #i = i + 1
 
-    with xlsxwriter.Workbook('excel_charts.xlsx') as workbook:
-    #workbook = xlsxwriter.Workbook('image_test3.xlsx')
+    with xlsxwriter.Workbook('/Users/luisdemiguel/Desktop/Ironhack/ih_dataptmad0420_final_project/data/results/as_is/charts/excel_charts.xlsx') as workbook:
+
         for sheet_name in list_name:
             worksheet = workbook.add_worksheet(sheet_name)
             worksheet.write('B2', 'field_fte_split')
@@ -70,9 +64,6 @@ def test(template):
             worksheet.insert_image('P70', 'plantas_process_supply.png')
             worksheet.write('AD68', 'hq_process_industrial')
             worksheet.insert_image('AD70', 'plantas_process_industrial.png')
-
-
-    #workbook.close()
 
 
     return
