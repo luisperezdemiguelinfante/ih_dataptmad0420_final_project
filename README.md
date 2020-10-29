@@ -1,4 +1,4 @@
-# Data Project README file
+# Automatización establecimiento Centro de Servicios
 
 Este proyecto trata sobre el análisis **AS IS** (situación de partida), **dimensionamiento** y análisis **TO BE** aplicable a cualquier empresa que quiera establecer un centro de servicios compartidos de actividades sin pecualiaridades en los mercados, y normalmente con caracter administrativo. 
 Establecer un centro de servicios sirve para para homogenizar sus procesos, estandarizarlos, buscar eficiencias y ahorros de coste.
