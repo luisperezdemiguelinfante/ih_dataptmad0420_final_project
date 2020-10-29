@@ -1,53 +1,32 @@
 # Data Project README file
 
-The README file describes the essence of the project playing the most important role. Most visitors will simply scroll down about twice on the README and leave if they are not interested. So, the README file should provide the reason **why** to checkout your project!!!). 
-Bearing that in mind, your job is to: 
-- Tell them what it is (with context).
-- Show them what it looks like in action.
-- Show them how they use it.
-- Tell them any other relevant details.
+Este proyecto trata sobre el análisis **AS IS** (situación de partida), **dimensionamiento** y análisis **TO BE** aplicable a cualquier empresa que quiera establecer un centro de servicios compartidos de actividades sin pecualiaridades en los mercados, y normalmente con caracter administrativo. 
+Establecer un centro de servicios sirve para para homogenizar sus procesos, estandarizarlos, buscar eficiencias y ahorros de coste.
 
-![Image](https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/05/aiexcerpt.png)
+Para empezar el analisis se necesita: 
+- Plantilla de dedicaciones del personal objetivo del estudio.
+- Mejoras propuestas
+- Sesiones de validación y mapeo de procesos
+- Sesiones de dimensionamiento propuesto
 
 ---
 
-## **Formatting**
-Your readers will most likely view your README in a browser so please keep that in mind when formatting its content: 
-- Use proper format when necesary (e.g.: `import pandas as pd`). 
-- Categorize content using two or three levels of header beneath. 
-- Make use of **emphasis** to call out important words. 
-- Link to project pages for related libraries you mention. Link to Wikipedia, Wiktionary, even Urban Dictionary definitions for words of which a reader may not be familiar. Make amusing cultural references. 
-- Add links to related projects or services. 
-
-> Here you have a markdown cheatsheet [Link](https://commonmark.org/help/) and tutorial [Link](https://commonmark.org/help/tutorial/).
+## **Mejoras del proyecto**
 
 
-## **Start writing ASAP:**
-*Last but not least, by writing your README soon you give yourself some pretty significant advantages. Most importantly, you’re giving yourself a chance to think through the project without the overhead of having to change code every time you change your mind about how something should be organized or what should be included.*
+**Automatización entregable AS IS:**
+*A partir de la plantilla de dedicaciones, se ha automatizado todo el proceso de extracción de datos relevantes y gráficos relativos a la situación AS IS*
 
 
-## **Suggested Structure:**
+**Mapeo de procesos y propuesta de actividades al CSC** 
+*Gracias a un modelo de machine learning, en función de las actividades reportadas, se automatiza el proceso de propuesta de las actividades categorizadas como administrativas para pasar al centro. Por otro lado, a partir de las mismas actividades, se realiza un modelo para mapear automaticamente a nivel "campo" (finanzas, supply chain, etc..), "nivel 1" (nivel proceso), "nivel 2" (nivel sub proceso).
+La muestra aun no es muy significativa, estando en torno al 70% de categorización correcta.*
 
-### :raising_hand: **Name** 
-Self-explanatory names are best. If the name sounds too vague or unrelated, it may be a signal to move on. It also must be catchy. Images, Logo, Gif or some color is strongly recommended.
+**Automatización entregable TO BE:**
+*A partir de las mejoras propuestas, con base a los mapeos y dedicaciones AS IS, se ha automatizado todo el proceso de extracción de datos relevantes y gráficos relativos a la situación TO BE*
 
-### :baby: **Status**
-Alpha, Beta, 1.1, Ironhack Data Analytics Final Project, etc... It's OK to write a sentence, too. The goal is to let interested people know where this project is at.
+ontrast your project with other, similar projects so the user knows how it is different from those projects. Highlight the technical concepts that your project demonstrates or supports. Keep it very brief.
 
-### :running: **One-liner**
-Having a one-liner that describes the pipeline/api/app is useful for getting an idea of what your code does in slightly greater detail. 
-
-### :computer: **Technology stack**
-Python, Pandas, Scipy, Scikit-learn, etc. Indicate the technological nature of the software, including primary programming language(s), main libraries and whether the software is intended as standalone or as a module in a framework or other ecosystem.
-
-### :boom: **Core technical concepts and inspiration**
-Why does it exist? Frame your project for the potential user. Compare/contrast your project with other, similar projects so the user knows how it is different from those projects. Highlight the technical concepts that your project demonstrates or supports. Keep it very brief.
-
-### :wrench: **Configuration**
-Requeriments, prerequisites, dependencies, installation instructions.
-
-### :see_no_evil: **Usage**
-Parameters, return values, known issues, thrown errors.
 
 ### :file_folder: **Folder structure**
 ```
@@ -72,28 +51,4 @@ Parameters, return values, known issues, thrown errors.
 
 > Do not forget to include `__trash__` and `.env` in `.gitignore` 
 
-### :shit: **ToDo**
-Next steps, features planned, known bugs (shortlist).
-
-### :information_source: **Further info**
-Credits, alternatives, references, license.
-
-### :love_letter: **Contact info**
-Getting help, getting involved, hire me please.
-
----
-
-> Here you have some repo examples:
-- [Mamba (OCR-Translator-Assistant)](https://github.com/YonatanRA/OCR-translator-assistant-project)
-- [Art Classification](https://github.com/serguma/art_classification)
-- [OSNet-IBN (width x 1.0) Lite](https://github.com/RodMech/OSNet-IBN1-Lite)
-- [Movie Founder](https://github.com/Alfagu/final-project-Ironhack-0419mad)
-- [Convolutional Neural Network to detect Pneumonia](https://github.com/jmolins89/final-project)
-- [Brain tumor detection project](https://github.com/alonsopdani/brain-tumor-detection-project)
-- [Policy-Gradient-Methods](https://github.com/cyoon1729/Policy-Gradient-Methods)
-
-> Here you have some tools and references:
-- [Make a README](https://www.makeareadme.com/)
-- [Awesome README](https://github.com/matiassingers/awesome-readme)
-- [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
